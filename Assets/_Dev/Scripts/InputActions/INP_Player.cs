@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
@@ -9,6 +10,8 @@ public class INP_Player : MonoBehaviour
     private Vector2 movement;
     private bool jump;
 
+    private Queue<IPlayerCommand> commandQueue = new Queue<IPlayerCommand>();
+
 
 #if ENABLE_INPUT_SYSTEM
     private void OnMovement(InputValue value)
@@ -18,7 +21,10 @@ public class INP_Player : MonoBehaviour
 
     public void OnJump(InputValue value)
     {
-        JumpInput(value.isPressed);
+        if (value.isPressed)
+        {
+            commandQueue.Enqueue(new JumpCommand());
+        }
     }
 #endif
 
@@ -26,7 +32,7 @@ public class INP_Player : MonoBehaviour
     private void MovementInput(Vector2 newMoveDirection)
     {
         movement = newMoveDirection;
-    } 
+    }
 
     public void JumpInput(bool newJumpState)
     {
@@ -43,6 +49,19 @@ public class INP_Player : MonoBehaviour
     public bool GetJump()
     {
         return jump;
+    }
+
+    public Queue<IPlayerCommand> GetCommands()
+    {
+        return commandQueue;
+    }
+    
+
+    public bool HasCommands() => commandQueue.Count > 0;
+
+    public IPlayerCommand GetNextCommand()
+    {
+        return commandQueue.Dequeue();
     }
     #endregion
 }
