@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e515e0090a300c4ab254d996652f3cb, type: 3}
-  m_Name: Chicken
+  m_Script: {fileID: 11500000, guid: 23a81cbd80cb0a841b8471b619441637, type: 3}
+  m_Name: EnemyFactory
   m_EditorClassIdentifier: 
-  damage: 1
+  duckPrefab: {fileID: 8604116075144675805, guid: f59065baa855f794eaf68a576115ae57, type: 3}
+  chickenPrefab: {fileID: 2867673244875911479, guid: 6d040735ae178b946a33587a515eb208, type: 3}

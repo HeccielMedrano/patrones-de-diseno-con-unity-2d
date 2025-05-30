@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e515e0090a300c4ab254d996652f3cb, type: 3}
   m_Name: Duck
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 2
