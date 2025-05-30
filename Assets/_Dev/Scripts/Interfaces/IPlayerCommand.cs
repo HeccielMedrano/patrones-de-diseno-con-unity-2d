@@ -9,4 +9,5 @@ public class CommandContext
 {
     public float JumpForce;
     public PlayerState PlayerState;
+    public AudioManager AudioManager;
 }

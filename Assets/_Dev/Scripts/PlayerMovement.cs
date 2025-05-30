@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Collider2D col;
     private PlayerState currentState;
     private Animator animationComponent;
+    private AudioManager audioManager;
     #endregion
 
     private void Awake()
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animationComponent = GetComponent<Animator>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void Update()
@@ -36,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         context.JumpForce = jumpForce;
         context.PlayerState = currentState;
+        context.AudioManager = audioManager;
 
         while (inputActionsPlayer.HasCommands())
         {
