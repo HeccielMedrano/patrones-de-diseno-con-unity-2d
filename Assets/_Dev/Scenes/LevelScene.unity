@@ -623,6 +623,9 @@ GameObject:
   - component: {fileID: 732180979}
   - component: {fileID: 732180978}
   - component: {fileID: 732180977}
+  - component: {fileID: 732180982}
+  - component: {fileID: 732180981}
+  - component: {fileID: 732180980}
   m_Layer: 0
   m_Name: Melon_0
   m_TagString: Untagged
@@ -722,6 +725,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1939566340}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &732180980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732180976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3be4f06553ec848b28e85fe4e696e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &732180981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732180976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb186113a046334cbfda3294feab93f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &732180982
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732180976}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.44753274
 --- !u!1 &754414172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,7 +3950,7 @@ Transform:
   m_GameObject: {fileID: 1074490380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 29.364, y: -0.99, z: 0}
+  m_LocalPosition: {x: 25.06, y: -1, z: 0}
   m_LocalScale: {x: 4.9144, y: 4.9144, z: 4.9144}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4785,7 +4848,7 @@ GameObject:
   - component: {fileID: 1875960734}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
