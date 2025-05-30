@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerState currentState;
     private Animator animationComponent;
     private AudioManager audioManager;
+    private IMovementStrategy movementStrategy;
     #endregion
 
     private void Awake()
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         col = GetComponent<Collider2D>();
         animationComponent = GetComponent<Animator>();
         audioManager = FindObjectOfType<AudioManager>();
+        movementStrategy = new DefaultMovement();
     }
 
     private void Update()
@@ -34,7 +36,9 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 moveDir = inputActionsPlayer.GetMovement();
-        rb.linearVelocity = new Vector2(moveDir.x * moveSpeed, rb.linearVelocityY);
+        float speed = movementStrategy.GetHorizontalSpeed(moveSpeed);
+        rb.linearVelocity = new Vector2(moveDir.x * speed, rb.linearVelocityY);
+
 
         context.JumpForce = jumpForce;
         context.PlayerState = currentState;
@@ -65,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
                 currentState = PlayerState.IDLE;
         }
     }
-    
+
     private void HandleAnimations()
     {
         string newAnimation = currentState switch
@@ -97,4 +101,13 @@ public class PlayerMovement : MonoBehaviour
     }
     #endregion
 
+    public void SetMovementStrategy(IMovementStrategy strategy)
+    {
+        movementStrategy = strategy;
+    }
+
+    public IMovementStrategy GetCurrentMovementStrategy()
+    {
+        return movementStrategy;
+    }
 }
