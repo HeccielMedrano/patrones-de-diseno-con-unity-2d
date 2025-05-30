@@ -8,4 +8,5 @@ public interface IPlayerCommand
 public class CommandContext
 {
     public float JumpForce;
+    public PlayerState PlayerState;
 }
