@@ -20,8 +20,6 @@ public class AudioManager : MonoBehaviour
             sfxDict[clip.name] = clip;
     }
 
-    // === Public Facade Methods ===
-
     public void PlaySFX(string name)
     {
         if (sfxDict.TryGetValue(name, out var clip))
